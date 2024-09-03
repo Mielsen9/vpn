@@ -1,1 +1,37 @@
-/*# sourceMappingURL=style.css.map */
+@import url(https://fonts.googleapis.com/css?family=Roboto:700);
+@import url(https://fonts.googleapis.com/css?family=Jost:700);
+@font-face {
+  font-family: "Xolonium";
+  src: local("Xolonium"), url("../fonts/Xolonium-Bold.woff2") format("woff2"), url("../fonts/Xolonium-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TTTravels";
+  src: local("TTTravels"), url("../fonts/TTTravels-Bold.woff2") format("woff2"), url("../fonts/TTTravels-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TTTravels";
+  src: local("TTTravels"), url("../fonts/TTTravels-DemiBold.woff2") format("woff2"), url("../fonts/TTTravels-DemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TTTravels";
+  src: local("TTTravels"), url("../fonts/TTTravels-Medium.woff2") format("woff2"), url("../fonts/TTTravels-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TTTravels";
+  src: local("TTTravels"), url("../fonts/TTTravels-Regular.woff2") format("woff2"), url("../fonts/TTTravels-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}/*# sourceMappingURL=style.css.map */
