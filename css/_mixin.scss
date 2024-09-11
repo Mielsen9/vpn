@@ -1,0 +1,185 @@
+// Іконка трикутника
+
+@mixin triangle($width, $direction, $color) {
+  width: 0;
+  height: 0;
+
+  @if $direction ==up {
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-bottom: $width solid $color;
+  }
+
+  @if $direction ==down {
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-top: $width solid $color;
+  }
+
+  @if $direction ==left {
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-right: $width solid $color;
+  }
+
+  @if $direction ==right {
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-left: $width solid $color;
+  }
+}
+
+//Шрифти 
+
+// @mixin font($size: false, $weight: false, $lh: false, $family: false, $color: false) {
+
+//   @if $family {
+//     font-family: $family, sans-serif;
+//   }
+
+//   @if $size {
+//     font-size: $size;
+//   }
+
+//   @if $color {
+//     color: $color;
+//   }
+
+//   @if $weight {
+//     font-weight: $weight;
+//   }
+
+//   @if $lh {
+//     line-height: $lh;
+//   }
+
+//   $maxWidth: 1440;
+
+//   @mixin adaptiv-font($pcSize, $mobSize) {
+//     $addSize: $pcSize - $mobSize;
+//     $addMobSize: $addSize + $addSize * 0.7;
+//     @media (max-width: 767px) {
+//       font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidth}));
+//     }
+//     @media (min-width: 767px) {
+//       font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
+//     }
+//   }
+// }
+
+@mixin font($pcSize: false, $mobSize: false, $weight: false, $lh: false, $family: false, $color: false) {
+  @if $family {
+    font-family: $family, sans-serif;
+  }
+
+  @if $color {
+    color: $color;
+  }
+
+  @if $weight {
+    font-weight: $weight;
+  }
+
+  @if $lh {
+    line-height: $lh;
+  }
+
+  // Викликаємо адаптивний міксин, якщо передані розміри для адаптивного шрифту
+  @if $pcSize and $mobSize {
+    @include adaptiv-font($pcSize, $mobSize);
+  }
+
+  $maxWidth: 1440;
+
+  @mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $addMobSize: $addSize + $addSize * 0.7;
+
+    @media (max-width: 767px) {
+      font-size: calc(#{$mobSize} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidth}));
+    }
+
+    @media (min-width: 767px) {
+      font-size: calc(#{$mobSize} + #{$addSize} * (100vw / #{$maxWidth}));
+    }
+  }
+}
+
+//Медіа запит
+
+$breakpoints: (
+  "phone": 480px,
+  "tablet": 768px,
+  "desktop": 1200px,
+);
+
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+
+    @if $type ==max {
+      $width: $width - 1px;
+    }
+
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+//Псевдо класи для силок
+
+@mixin link ($link, $visit, $hover, $active) {
+  a {
+    color: $link;
+
+    &:visited {
+      color: $visit;
+    }
+
+    &:hover {
+      color: $hover;
+    }
+
+    &:active {
+      color: $active;
+    }
+  }
+}
+
+//Псевдоелементи
+
+@mixin pseudo-element($content: '', $display: block, $pos: absolute) {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+//Центрування в позиції absolut
+
+@mixin сentering-xy() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin сentering-x() {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin сentering-y() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Центрування флексами
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
