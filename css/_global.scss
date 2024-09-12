@@ -8,3 +8,9 @@ body{
 
   @include adaptiv-font(22, 16);
 }
+
+.wrapper {
+  max-width: 1550px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
