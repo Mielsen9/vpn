@@ -11,6 +11,7 @@
   &__items {
     display: flex;
     gap: 40px;
+    padding: 0 10px;
   }
   &__link {
     font-family: "TT Travels", sans-serif;
@@ -22,6 +23,6 @@
     &:hover{
       color:grey
     }
-    @include adaptiv-font(18, 15)    
+    @include adaptiv-font(18, 12)    
   }
 }

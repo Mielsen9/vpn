@@ -208,6 +208,7 @@ a {
 .nav__items {
   display: flex;
   gap: 40px;
+  padding: 0 10px;
 }
 .nav__link {
   font-family: "TT Travels", sans-serif;
@@ -222,12 +223,12 @@ a {
 }
 @media (max-width: 767px) {
   .nav__link {
-    font-size: calc(15px + 5.1 * (100vw - 320px) / 1550);
+    font-size: calc(12px + 10.2 * (100vw - 320px) / 1550);
   }
 }
 @media (min-width: 767px) {
   .nav__link {
-    font-size: calc(15px + 3 * 100vw / 1550);
+    font-size: calc(12px + 6 * 100vw / 1550);
   }
 }
 
