@@ -34,4 +34,26 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-}/*# sourceMappingURL=style.css.map */
+}
+body {
+  font-family: "TT Travels", sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #5c5c5c;
+}
+@media (max-width: 767px) {
+  body {
+    font-size: calc(16 + 10.2 * (100vw - 320px) / 1440);
+  }
+}
+@media (min-width: 767px) {
+  body {
+    font-size: calc(16 + 6 * 100vw / 1440);
+  }
+}
+
+.nav__list {
+  display: flex;
+}
+
+/*# sourceMappingURL=style.css.map */

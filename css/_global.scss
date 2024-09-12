@@ -1,8 +1,10 @@
+
 body{
   //font
   font-family: "TT Travels", sans-serif;
   font-weight: 400;
-  @include adaptiv-font(22, 16);
   line-height: 1.65;
   color: #5c5c5c;
+
+  @include adaptiv-font(22, 16);
 }
