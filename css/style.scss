@@ -1,5 +1,9 @@
 @import 'fonts',
-        'mixin',
-        'global',
+        'reset',
         'variables',
-        'nav';
+        'mixin',
+        'global';
+
+@import 'blocks/nav',
+        'blocks/logo',
+        'blocks/comunication';
