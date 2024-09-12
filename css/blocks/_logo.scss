@@ -1,8 +1,19 @@
 .logo{
   display: flex;
+  align-items: center;
+  gap: 20px;
 
   &__img {
     width: 105px;
     height: 65px;
+  }
+  &__text {
+    font-family: "Xolonium", sans-serif;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #fff;
+    @include adaptiv-font(20, 12)
   }
 }

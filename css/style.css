@@ -193,15 +193,85 @@ body {
   padding: 0 15px;
 }
 
+a {
+  text-decoration: none;
+}
+
+.nav {
+  background: #89AF5C;
+}
 .nav__list {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+.nav__items {
+  display: flex;
+  gap: 40px;
+}
+.nav__link {
+  font-family: "TT Travels", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: #fff;
+  display: block;
+}
+.nav__link:hover {
+  color: grey;
+}
+@media (max-width: 767px) {
+  .nav__link {
+    font-size: calc(15px + 5.1 * (100vw - 320px) / 1550);
+  }
+}
+@media (min-width: 767px) {
+  .nav__link {
+    font-size: calc(15px + 3 * 100vw / 1550);
+  }
+}
+
 .logo {
   display: flex;
+  align-items: center;
+  gap: 20px;
 }
 .logo__img {
   width: 105px;
   height: 65px;
+}
+.logo__text {
+  font-family: "Xolonium", sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .logo__text {
+    font-size: calc(12px + 13.6 * (100vw - 320px) / 1550);
+  }
+}
+@media (min-width: 767px) {
+  .logo__text {
+    font-size: calc(12px + 8 * 100vw / 1550);
+  }
+}
+
+.comunication__link {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  background-color: #FFDC42;
+  padding: 25px;
+  border-radius: 20px;
+}
+.comunication__text {
+  font-family: "TT Travels", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: #191919;
 }/*# sourceMappingURL=style.css.map */
