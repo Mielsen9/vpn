@@ -1,0 +1,114 @@
+.burger-menu {
+  display: none; // спочатку приховане меню
+  justify-content: center;
+  align-items: center;
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 36px;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 5;
+    background-color: #F26042;
+
+    span,
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 70%;
+      height: 2px;
+      border-radius: 10px;
+      background-color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    &::before {
+      top: 10px;
+    }
+
+    &::after {
+      bottom: 10px;
+    }
+  }
+
+  // Стилі для відкритого меню
+  &.burger-menu__open {
+    display: flex; // показує меню
+
+    .icon-menu {
+      &::before {
+        transform: rotate(-45deg);
+        top: 16px;
+      }
+
+      &::after {
+        transform: rotate(45deg);
+        bottom: 17px;
+      }
+
+      span {
+        width: 0;
+      }
+    }
+  }
+}
+
+@include mq(tablet, max) {
+  .nav-none {
+		display: none;
+	}
+
+  .burger-menu {
+		display: flex;
+	}
+
+  .nav__body {
+		position: fixed;
+		width: 100%;
+		height: 100%; 
+		background-color: var(--help__list);
+		left: -100%;
+		top: 0;
+		z-index: 2;
+		padding: 10px 0 30px;
+		overflow: auto;
+		transition: left 0.3s ease 0s;
+	}
+
+	.nav__body::before {
+		content: '';
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: -100%;
+		height: 50px;
+		z-index: 2;
+		background-color: var(--help__list);
+		transition: left 0.3s ease 0s;
+	}
+
+	.menu-open .nav__body,
+	.menu-open .nav__body::before {
+		left:0 ;
+	}
+
+	.nav__list {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		font-size: 32px; 
+	}
+
+	.nav__link:hover {
+		color: #fff;
+	}
+
+	.nav__item {
+		text-align: center;
+	}
+}
