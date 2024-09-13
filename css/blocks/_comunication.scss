@@ -1,19 +1,22 @@
 .comunication{
-  
+  background-color: $color-yellov;
+  border-radius: 20px;
+  box-sizing: border-box;
+  @include flex-center;
+  padding: 0 25px;
+  height: 64px;
+
   &__link {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 35px;
-    background-color: $color-yellov;
-    padding: 25px;
-    border-radius: 20px;
   }
   &__text {
     font-family: "TT Travels", sans-serif;
     font-weight: 600;
-    font-size: 20px;
-    line-height: 1;
     letter-spacing: 0.01em;
-    color: #191919;    
+    color: #191919;
+    @include adaptiv-font(20, 13)   
   }
 }

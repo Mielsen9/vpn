@@ -1,0 +1,9 @@
+.header {
+  background-color: $color-green;
+
+  &__conteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

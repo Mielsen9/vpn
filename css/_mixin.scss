@@ -29,6 +29,14 @@
   }
 }
 
+//viaport
+@mixin vw($property, $minValue, $maxValue, $minViewport: 320, $maxViewport: 1550) {
+  $minVw: ($minValue / $minViewport) * 100vw;
+  $maxVw: ($maxValue / $maxViewport) * 100vw;
+
+  #{$property}: clamp(#{$minValue}px, $maxVw, #{$maxValue}px);
+}
+
 // Mixin for font
 
 @mixin font($size:false, $weight: false, $lh: false, $family: false, $color: false) {
@@ -75,6 +83,7 @@ $maxWidth: 1550;
 $breakpoints: (
   "phone": 480px,
   "tablet": 768px,
+  "mtablet": 850px,
   "desktop": 1200px,
 );
 

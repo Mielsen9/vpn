@@ -194,21 +194,21 @@ body {
 }
 
 a {
+  display: inline-block;
   text-decoration: none;
 }
 
-.nav {
-  background: #89AF5C;
-}
 .nav__list {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 0 10px;
 }
 .nav__items {
   display: flex;
   gap: 40px;
-  padding: 0 10px;
 }
 .nav__link {
   font-family: "TT Travels", sans-serif;
@@ -223,23 +223,30 @@ a {
 }
 @media (max-width: 767px) {
   .nav__link {
-    font-size: calc(12px + 10.2 * (100vw - 320px) / 1550);
+    font-size: calc(16px + 3.4 * (100vw - 320px) / 1550);
   }
 }
 @media (min-width: 767px) {
   .nav__link {
-    font-size: calc(12px + 6 * 100vw / 1550);
+    font-size: calc(16px + 2 * 100vw / 1550);
+  }
+}
+@media only screen and (max-width: 849px) {
+  .nav__list {
+    gap: 10px;
   }
 }
 
-.logo {
+.logo__link {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 .logo__img {
-  width: 105px;
-  height: 65px;
+  max-width: 105px;
+  width: 87.5%;
+  height: auto;
+  display: block;
 }
 .logo__text {
   font-family: "Xolonium", sans-serif;
@@ -248,6 +255,7 @@ a {
   letter-spacing: 0.01em;
   text-transform: uppercase;
   color: #fff;
+  white-space: nowrap;
 }
 @media (max-width: 767px) {
   .logo__text {
@@ -259,22 +267,43 @@ a {
     font-size: calc(12px + 8 * 100vw / 1550);
   }
 }
+@media only screen and (max-width: 1199px) {
+  .logo__text {
+    display: none;
+  }
+}
 
+.comunication {
+  background-color: #FFDC42;
+  border-radius: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+  height: 64px;
+}
 .comunication__link {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 35px;
-  background-color: #FFDC42;
-  padding: 25px;
-  border-radius: 20px;
 }
 .comunication__text {
   font-family: "TT Travels", sans-serif;
   font-weight: 600;
-  font-size: 20px;
-  line-height: 1;
   letter-spacing: 0.01em;
   color: #191919;
+}
+@media (max-width: 767px) {
+  .comunication__text {
+    font-size: calc(13px + 11.9 * (100vw - 320px) / 1550);
+  }
+}
+@media (min-width: 767px) {
+  .comunication__text {
+    font-size: calc(13px + 7 * 100vw / 1550);
+  }
 }
 
 .burger-menu {
@@ -370,4 +399,12 @@ a {
   .nav__item {
     text-align: center;
   }
+}
+.header {
+  background-color: #89AF5C;
+}
+.header__conteiner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }/*# sourceMappingURL=style.css.map */

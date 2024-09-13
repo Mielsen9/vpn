@@ -1,17 +1,17 @@
 
 .nav {
-  background: $color-green;
   
   &__list {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 0 10px;
   }
   &__items {
     display: flex;
     gap: 40px;
-    padding: 0 10px;
   }
   &__link {
     font-family: "TT Travels", sans-serif;
@@ -23,6 +23,11 @@
     &:hover{
       color:grey
     }
-    @include adaptiv-font(18, 12)    
+    @include adaptiv-font(18, 16)    
+  }
+  @include mq(mtablet,max) {
+    &__list {
+      gap: 10px;
+    }
   }
 }
