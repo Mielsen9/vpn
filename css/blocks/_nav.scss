@@ -25,9 +25,14 @@
     }
     @include adaptiv-font(18, 16)    
   }
-  @include mq(mtablet,max) {
+  //Media query
+  @include mq(mtablet) {
     &__list {
       gap: 10px;
     }
   }
+  @include mq(tablet) {
+    display: none;
+  }
+
 }

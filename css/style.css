@@ -236,6 +236,11 @@ a {
     gap: 10px;
   }
 }
+@media only screen and (max-width: 767px) {
+  .nav {
+    display: none;
+  }
+}
 
 .logo__link {
   display: flex;
@@ -272,6 +277,11 @@ a {
     display: none;
   }
 }
+@media only screen and (max-width: 767px) {
+  .logo__text {
+    display: inherit;
+  }
+}
 
 .comunication {
   background-color: #FFDC42;
@@ -303,6 +313,11 @@ a {
 @media (min-width: 767px) {
   .comunication__text {
     font-size: calc(13px + 7 * 100vw / 1550);
+  }
+}
+@media only screen and (max-width: 767px) {
+  .comunication {
+    display: none;
   }
 }
 

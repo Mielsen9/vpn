@@ -19,4 +19,8 @@
     color: #191919;
     @include adaptiv-font(20, 13)   
   }
+
+  @include mq(tablet) {
+    display: none;
+  }
 }

@@ -20,8 +20,13 @@
     color: #fff;
     white-space: nowrap;
     @include adaptiv-font(20, 12);
-    @include mq(desktop, max) {
+
+    //Media query
+    @include mq(desktop) {
       display: none;
+    }
+    @include mq(tablet) {
+      display: inherit;
     }
   }
 }
