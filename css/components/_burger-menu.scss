@@ -1,0 +1,102 @@
+.burger-menu {
+  display: none; // спочатку приховане меню
+  width: 45px;
+  height: 50px;
+  cursor: pointer;
+
+  &__icon {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0 0 45px;
+    width: 40px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 5;
+
+    span,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 4px;
+      border-radius: 10px;
+      background-color: $color-yellov;
+      transition: all 0.3s ease;
+    }
+    &::after {
+      top: 35px;
+      width: 24px;
+    }
+  }
+
+}
+
+//media query
+@include mq(tablet) {
+  .burger-menu {
+    display: flex;
+  }
+}
+
+//Сhange nav for burger
+.open {
+
+  .burger-menu {
+
+    &__icon {
+
+      &::after {
+        transform: rotate(45deg);
+        bottom: 10px;
+        width: 40px;
+      }
+
+      span {
+        transform: rotate(-45deg);
+        top: 35px;
+      }
+    }
+  }
+
+  .nav {
+    display: flex;//show nav
+
+    &__body {
+      position:fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      background-color: $burger;
+      padding: 110px 0;
+      overflow: auto;// Щоб бачити приховане меню
+    }
+    &__list {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 40px;
+      
+    }
+    &__link {
+      font-size: 18px;
+    }
+  }
+
+  .comunication {
+    display: flex;
+    margin: 0 5%;
+    z-index: 3;
+    position: absolute;
+    bottom: 20px;
+    width: 90%;
+    
+    &__link {
+      width: 100%;
+    }
+  }
+
+}
+
+
+

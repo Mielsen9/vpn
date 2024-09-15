@@ -1,10 +1,13 @@
-.comunication{
+.comunication {
   background-color: $color-yellov;
   border-radius: 20px;
   box-sizing: border-box;
   @include flex-center;
   padding: 0 25px;
   height: 64px;
+  &:active {
+    background-color: #c4a418;
+  }
 
   &__link {
     display: flex;
@@ -18,9 +21,5 @@
     letter-spacing: 0.01em;
     color: #191919;
     @include adaptiv-font(20, 13)   
-  }
-
-  @include mq(tablet) {
-    display: none;
   }
 }

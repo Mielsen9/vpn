@@ -19,3 +19,9 @@ a {
   display: inline-block;
   text-decoration: none;
 }
+
+button {
+  all: unset;
+  display: inline-block; /* або block/inline-flex, в залежності від потреб */
+  cursor: pointer;
+}

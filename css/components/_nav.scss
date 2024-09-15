@@ -21,10 +21,21 @@
     color: #fff;
     display: block;
     &:hover{
-      color:grey
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 10px;
+
+    }
+    &:active {
+      color: gray;
     }
     @include adaptiv-font(18, 16)    
   }
+  &__body {
+    display: flex;
+    justify-content:space-between;
+  }
+
   //Media query
   @include mq(mtablet) {
     &__list {

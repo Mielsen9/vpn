@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Roboto:700);
 @import url(https://fonts.googleapis.com/css?family=Jost:700);
 @font-face {
@@ -198,6 +199,12 @@ a {
   text-decoration: none;
 }
 
+button {
+  all: unset;
+  display: inline-block; /* або block/inline-flex, в залежності від потреб */
+  cursor: pointer;
+}
+
 .nav__list {
   display: flex;
   justify-content: space-between;
@@ -219,7 +226,12 @@ a {
   display: block;
 }
 .nav__link:hover {
-  color: grey;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 10px;
+}
+.nav__link:active {
+  color: gray;
 }
 @media (max-width: 767px) {
   .nav__link {
@@ -230,6 +242,10 @@ a {
   .nav__link {
     font-size: calc(16px + 2 * 100vw / 1550);
   }
+}
+.nav__body {
+  display: flex;
+  justify-content: space-between;
 }
 @media only screen and (max-width: 849px) {
   .nav__list {
@@ -242,6 +258,9 @@ a {
   }
 }
 
+.logo {
+  z-index: 3;
+}
 .logo__link {
   display: flex;
   align-items: center;
@@ -293,6 +312,9 @@ a {
   padding: 0 25px;
   height: 64px;
 }
+.comunication:active {
+  background-color: #c4a418;
+}
 .comunication__link {
   display: flex;
   align-items: center;
@@ -315,106 +337,84 @@ a {
     font-size: calc(13px + 7 * 100vw / 1550);
   }
 }
-@media only screen and (max-width: 767px) {
-  .comunication {
-    display: none;
-  }
-}
 
 .burger-menu {
   display: none;
-  justify-content: center;
-  align-items: center;
+  width: 45px;
+  height: 50px;
+  cursor: pointer;
 }
 .burger-menu__icon {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  flex: 0 0 36px;
-  height: 36px;
-  width: 36px;
+  flex: 0 0 45px;
+  width: 40px;
   border-radius: 50%;
   position: relative;
   z-index: 5;
-  background-color: #F26042;
 }
-.burger-menu__icon span, .burger-menu__icon::before, .burger-menu__icon::after {
+.burger-menu__icon span, .burger-menu__icon::after {
   content: "";
   position: absolute;
-  width: 70%;
-  height: 2px;
+  width: 40px;
+  height: 4px;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #FFDC42;
   transition: all 0.3s ease;
 }
-.burger-menu__icon::before {
-  top: 10px;
-}
 .burger-menu__icon::after {
-  bottom: 10px;
-}
-.burger-menu.burger-menu__open {
-  display: flex;
-}
-.burger-menu.burger-menu__open .icon-menu::before {
-  transform: rotate(-45deg);
-  top: 16px;
-}
-.burger-menu.burger-menu__open .icon-menu::after {
-  transform: rotate(45deg);
-  bottom: 17px;
-}
-.burger-menu.burger-menu__open .icon-menu span {
-  width: 0;
+  top: 35px;
+  width: 24px;
 }
 
 @media only screen and (max-width: 767px) {
-  .nav-none {
-    display: none;
-  }
   .burger-menu {
     display: flex;
   }
-  .nav__body {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: var(--help__list);
-    left: -100%;
-    top: 0;
-    z-index: 2;
-    padding: 10px 0 30px;
-    overflow: auto;
-    transition: left 0.3s ease 0s;
-  }
-  .nav__body::before {
-    content: "";
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    height: 50px;
-    z-index: 2;
-    background-color: var(--help__list);
-    transition: left 0.3s ease 0s;
-  }
-  .menu-open .nav__body,
-  .menu-open .nav__body::before {
-    left: 0;
-  }
-  .nav__list {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 32px;
-  }
-  .nav__link:hover {
-    color: #fff;
-  }
-  .nav__item {
-    text-align: center;
-  }
 }
+.open .burger-menu__icon::after {
+  transform: rotate(45deg);
+  bottom: 10px;
+  width: 40px;
+}
+.open .burger-menu__icon span {
+  transform: rotate(-45deg);
+  top: 35px;
+}
+.open .nav {
+  display: flex;
+}
+.open .nav__body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: #191919;
+  padding: 110px 0;
+  overflow: auto;
+}
+.open .nav__list {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+.open .nav__link {
+  font-size: 18px;
+}
+.open .comunication {
+  display: flex;
+  margin: 0 5%;
+  z-index: 3;
+  position: absolute;
+  bottom: 20px;
+  width: 90%;
+}
+.open .comunication__link {
+  width: 100%;
+}
+
 .header {
   background-color: #89AF5C;
 }
@@ -422,4 +422,9 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media only screen and (max-width: 767px) {
+  .header__comunication {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */

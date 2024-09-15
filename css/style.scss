@@ -1,11 +1,15 @@
+// Global style
 @import 'fonts',
         'reset',
         'variables',
         'mixin',
         'global';
 
-@import 'blocks/nav',
-        'blocks/logo',
-        'blocks/comunication',
-        'blocks/burger-menu',
-        'blocks/header';
+// Components
+@import 'components/nav',
+        'components/logo',
+        'components/comunication',
+        'components/burger-menu';
+
+// Blocks
+@import 'blocks/header';
