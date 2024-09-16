@@ -9,7 +9,9 @@
 @import 'components/nav',
         'components/logo',
         'components/comunication',
-        'components/burger-menu';
+        'components/burger-menu',
+        'components/download';
 
 // Blocks
-@import 'blocks/header';
+@import 'blocks/header',
+        'blocks/intro';
