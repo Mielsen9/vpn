@@ -3,32 +3,29 @@
   gap: 15px 35px;
   
   &__item {
-    max-height: 100px;
     width: 100%;
   }
-  
+
   &__link {
     @include flex-center;
     gap: 10px;
     background-color: #fff;
     border-radius: 20px;
-    padding: 20px 20px;
+    @include adaptiv-value(padding, 20, 12)
+  }
 
+  &__img {
+    @include adaptiv-value(width, 62, 37)
   }
 
   &__text {
     color: #191919;
     font-weight: 700;
-    // font-size: 16px;
-    @include adaptiv-font(13, 10);
     line-height: 1.875;
     text-transform: uppercase;
+    @include adaptiv-font(13, 10);
     strong {
       @include adaptiv-font(16, 12);
     }
   }
-  &__img {
-    
-  }
-
 }

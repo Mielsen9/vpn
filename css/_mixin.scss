@@ -15,7 +15,7 @@
     #{$property}: $startSize + px;
 
     @media (max-width: #{$maxWidthContainer + px}) {
-      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidthContainer - $minWidth}));
     }
   }
 
@@ -24,13 +24,13 @@
     #{$property}: $startSize + px;
 
     @media (min-width: #{$maxWidthContainer + px}) {
-      #{$property}: calc(#{$minSize + px} #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+      #{$property}: calc(#{$minSize + px} #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidth - $minWidth}));
     }
   }
 
   @else {
     // Всегда
-    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidth - $minWidth}));
   }
 }
 
@@ -38,7 +38,7 @@
 @mixin adaptiv-font($pcSize, $mobSize) {
   $addSize: $pcSize - $mobSize;
   $addMobSize: $addSize + $addSize * 0.7;
-  $adaptmax: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidthContainer}));
+  $adaptmax: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - #{$minWidth + px}) / #{$maxWidthContainer}));
   $adaptmin: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidthContainer}));
   
   @media (max-width: 767px) {

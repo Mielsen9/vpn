@@ -76,7 +76,7 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 40px;
-      
+      @include adaptiv-value(padding-left, 60, 30)
     }
     &__link {
       font-size: 18px;

@@ -1,8 +1,8 @@
 .comunication {
+  @include flex-center;
   background-color: $color-yellov;
   border-radius: 20px;
   box-sizing: border-box;
-  @include flex-center;
   padding: 0 25px;
   height: 64px;
   &:active {

@@ -7,10 +7,9 @@
     gap: 20px;  
   }
   &__img {
-    max-width: 105px;
-    width: 87.5%;
     height: auto;
     display: block;
+    @include adaptiv-value(width, 105, 80)
   }
   &__text {
     font-family: "Xolonium", sans-serif;
