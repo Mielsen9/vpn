@@ -1,3 +1,70 @@
+// Viaport
+@mixin vw($property, $maxValue, $minValue) {
+  $minVw: ($minValue / $minWidth) * 100vw;
+  $maxVw: ($maxValue / $maxWidthContainer) * 100vw;
+  
+  #{$property}: clamp(#{$minValue}px, $maxVw, #{$maxValue}px);
+}
+
+// Adaptiv-value
+@mixin adaptiv-value($property, $startSize, $minSize, $type: 1) {
+  $addSize: $startSize - $minSize;
+
+  @if $type==1 {
+    // Только если меньше контейнера
+    #{$property}: $startSize + px;
+
+    @media (max-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+    }
+  }
+
+  @else if $type==2 {
+    // Только если больше контейнера
+    #{$property}: $startSize + px;
+
+    @media (min-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+  }
+
+  @else {
+    // Всегда
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+  }
+}
+
+//Mixin for size
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $addMobSize: $addSize + $addSize * 0.7;
+  $adaptmax: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidthContainer}));
+  $adaptmin: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidthContainer}));
+  
+  @media (max-width: 767px) {
+    font-size: clamp(#{$mobSize + px}, $adaptmax, #{$pcSize + px});
+  }
+  @media (min-width: 767px) {
+    font-size: clamp(#{$mobSize + px}, $adaptmin, #{$pcSize + px});
+  }
+}
+
+//Медіа запит
+@mixin mq($width, $type: max) {
+
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+
+    @if $type ==max {
+      $width: $width - 1px;
+    }
+
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
 // Іконка трикутника
 @mixin triangle($width, $direction, $color) {
   width: 0;
@@ -25,74 +92,6 @@
     border-top: $width solid transparent;
     border-bottom: $width solid transparent;
     border-left: $width solid $color;
-  }
-}
-
-//viaport
-@mixin vw($property, $minValue, $maxValue, $minViewport: 320, $maxViewport: 1550) {
-  $minVw: ($minValue / $minViewport) * 100vw;
-  $maxVw: ($maxValue / $maxViewport) * 100vw;
-
-  #{$property}: clamp(#{$minValue}px, $maxVw, #{$maxValue}px);
-}
-
-// Mixin for font
-@mixin font($size:false, $weight: false, $lh: false, $family: false, $color: false) {
-  @if $family {
-    font-family: $family, sans-serif;
-  }
-
-  @if $color {
-    color: $color;
-  }
-
-  @if $weight {
-    font-weight: $weight;
-  }
-
-  @if $lh {
-    line-height: $lh;
-  }
-
-  @if $size {
-    font-size: $size;
-  }
-}
-
-//Mixin for size
-@mixin adaptiv-font($pcSize, $mobSize) {
-  $maxWidth: 1550; // width macket
-  $addSize: $pcSize - $mobSize;
-  $addMobSize: $addSize + $addSize * 0.7;
-
-  @media (max-width: 767px) {
-    font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidth}));
-  }
-   @media (min-width: 767px) {
-    font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
-  }
-}
-
-//Медіа запит
-@mixin mq($width, $type: max) {
-
-  $breakpoints: (
-  "phone": 480px,
-  "tablet": 768px,
-  "mtablet": 850px,
-  "desktop": 1200px,
-  );
-
-  @if map_has_key($breakpoints, $width) {
-    $width: map_get($breakpoints, $width);
-
-    @if $type ==max {
-      $width: $width - 1px;
-    }
-
-    @media only screen and (#{$type}-width: $width) {
-      @content;
-    }
   }
 }
 

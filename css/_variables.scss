@@ -1,5 +1,15 @@
-
-  //color
+//color
   $color-green: #89AF5C;
-  $color-yellow: #FFDC42;
+  $color-yellov: #FFDC42;
   $burger: #191919;
+// Maket
+  $maxWidth: 1920;
+  $maxWidthContainer: 1550;  
+  $minWidth: 320;
+// Media query
+  $breakpoints: (
+  "phone": 480px,
+  "tablet": 768px,
+  "mtablet": 850px,
+  "desktop": 1200px,
+  );
