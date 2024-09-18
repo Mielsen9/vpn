@@ -1,0 +1,50 @@
+.question {
+  background-color: $color-green;
+  background-image: url(/img/question/Ellipse\ .svg); 
+  background-repeat: no-repeat;
+  @include adaptiv-value(padding-top, 130, 65);
+  @include adaptiv-value(padding-bottom, 130, 65);
+  &__conteiner {
+
+  }
+
+  &__title {
+  }
+
+  &__blocks {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__block {
+    flex: 0 0 46%;
+    border-bottom: 1px solid rgba(255, 255, 255, 19%);
+    @include adaptiv-value(padding-top, 40, 20);
+    @include adaptiv-value(padding-bottom, 40, 20);
+    // mq
+    @include mq(tablet) {
+      flex: 0 0 100%;
+    }
+  }
+
+  &__block-title {
+    h3{
+      font-family: "Jost", sans-serif;
+      font-weight: 700;
+      line-height: 1.35;
+      text-transform: uppercase;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include adaptiv-font(23, 14);
+    // mq
+    @include mq(desktop) {
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.plus-icon {
+  position: relative;
+  display: inline-block;
+  @include adaptiv-value(width, 64, 48); /* Ширина контейнера */
+  @include adaptiv-value(height, 64, 48); /* Висота контейнера */
+  border-radius: 50%; /* Робить круглим */
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: #F8E71C; /* Жовтий колір */
+    border-radius: 2px; /* Зробить лінії трохи округлими */
+  }
+
+  &::before {
+    width: 3px; /* Ширина вертикальної лінії */
+    height: 50%; /* Висота вертикальної лінії */
+    top: 25%; /* Відступ зверху для центрування */
+    left: 50%; /* Центр по горизонталі */
+    transform: translateX(-50%); /* Корекція для центрування */
+  }
+
+  &::after {
+    width: 50%; /* Ширина горизонтальної лінії */
+    height: 3px; /* Висота горизонтальної лінії */
+    top: 50%; /* Центр по вертикалі */
+    left: 25%; /* Відступ зліва для центрування */
+    transform: translateY(-50%); /* Корекція для центрування */
+  }
+}

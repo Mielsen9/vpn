@@ -11,11 +11,13 @@
         'components/logo',
         'components/comunication',
         'components/burger-menu',
-        'components/download';
+        'components/download',
+        'components/plus-icon';
 
 // Blocks
 @import 'blocks/header',
         'blocks/intro',
         'blocks/servers',
         'blocks/gadgets',
-        'blocks/safety';
+        'blocks/safety',
+        'blocks/question';

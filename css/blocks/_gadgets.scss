@@ -14,16 +14,6 @@
 
   &__title {
     @include adaptiv-value(margin-bottom, 45, 40);
-    h2 {
-      mark {
-        color: $color-yellov;
-      }
-      span,
-      ::after,
-      ::before {
-        background-color: #fff;
-      }
-    }
   }
 
   &__text,

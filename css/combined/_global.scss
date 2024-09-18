@@ -67,7 +67,17 @@ body{
   }
 }
 
-
+.yellow-title {
+  color: #fff;
+  mark {
+    color: $color-yellov;
+  }
+  span,
+  ::after,
+  ::before {
+    background-color: #fff;
+  }
+}
 
 a {
   display: inline-block;

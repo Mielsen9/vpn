@@ -255,6 +255,18 @@ body {
   width: 10px;
 }
 
+.yellow-title {
+  color: #fff;
+}
+.yellow-title mark {
+  color: #FFDC42;
+}
+.yellow-title span,
+.yellow-title ::after,
+.yellow-title ::before {
+  background-color: #fff;
+}
+
 a {
   display: inline-block;
   text-decoration: none;
@@ -540,6 +552,46 @@ button {
   .download__text strong {
     font-size: clamp(12px, 12px + 4 * 100vw / 1550, 16px);
   }
+}
+
+.plus-icon {
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  /* Ширина контейнера */
+  height: 64px;
+  /* Висота контейнера */
+  border-radius: 50%; /* Робить круглим */
+}
+@media (max-width: 1550px) {
+  .plus-icon {
+    width: calc(48px + 16 * (100vw - 390px) / 1160);
+  }
+}
+@media (max-width: 1550px) {
+  .plus-icon {
+    height: calc(48px + 16 * (100vw - 390px) / 1160);
+  }
+}
+.plus-icon::before, .plus-icon::after {
+  content: "";
+  position: absolute;
+  background-color: #F8E71C; /* Жовтий колір */
+  border-radius: 2px; /* Зробить лінії трохи округлими */
+}
+.plus-icon::before {
+  width: 3px; /* Ширина вертикальної лінії */
+  height: 50%; /* Висота вертикальної лінії */
+  top: 25%; /* Відступ зверху для центрування */
+  left: 50%; /* Центр по горизонталі */
+  transform: translateX(-50%); /* Корекція для центрування */
+}
+.plus-icon::after {
+  width: 50%; /* Ширина горизонтальної лінії */
+  height: 3px; /* Висота горизонтальної лінії */
+  top: 50%; /* Центр по вертикалі */
+  left: 25%; /* Відступ зліва для центрування */
+  transform: translateY(-50%); /* Корекція для центрування */
 }
 
 .header {
@@ -929,14 +981,6 @@ button {
     margin-bottom: calc(40px + 5 * (100vw - 390px) / 1160);
   }
 }
-.gadgets__title h2 mark {
-  color: #FFDC42;
-}
-.gadgets__title h2 span,
-.gadgets__title h2 ::after,
-.gadgets__title h2 ::before {
-  background-color: #fff;
-}
 .gadgets__text, .gadgets__title h2 {
   color: #fff;
   max-width: 1023px;
@@ -1123,5 +1167,78 @@ button {
 @media (max-width: 1550px) {
   .safety__card-text {
     margin-top: calc(25px + 15 * (100vw - 390px) / 1160);
+  }
+}
+
+.question {
+  background-color: #89AF5C;
+  background-image: url(/img/question/Ellipse\ .svg);
+  background-repeat: no-repeat;
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
+@media (max-width: 1550px) {
+  .question {
+    padding-top: calc(65px + 65 * (100vw - 390px) / 1160);
+  }
+}
+@media (max-width: 1550px) {
+  .question {
+    padding-bottom: calc(65px + 65 * (100vw - 390px) / 1160);
+  }
+}
+.question__blocks {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.question__block {
+  flex: 0 0 46%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.19);
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+@media (max-width: 1550px) {
+  .question__block {
+    padding-top: calc(20px + 20 * (100vw - 390px) / 1160);
+  }
+}
+@media (max-width: 1550px) {
+  .question__block {
+    padding-bottom: calc(20px + 20 * (100vw - 390px) / 1160);
+  }
+}
+@media only screen and (max-width: 767px) {
+  .question__block {
+    flex: 0 0 100%;
+  }
+}
+.question__block-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.question__block-title h3 {
+  font-family: "Jost", sans-serif;
+  font-weight: 700;
+  line-height: 1.35;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+@media (max-width: 767px) {
+  .question__block-title {
+    font-size: clamp(14px, 14px + 15.3 * (100vw - 390px) / 1550, 23px);
+  }
+}
+@media (min-width: 767px) {
+  .question__block-title {
+    font-size: clamp(14px, 14px + 9 * 100vw / 1550, 23px);
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .question__block-title {
+    font-size: 14px;
   }
 }/*# sourceMappingURL=style.css.map */
