@@ -1,0 +1,69 @@
+.gadgets {
+  @include adaptiv-value(padding-top, 100, 65);
+  @include adaptiv-value(padding-bottom, 100, 50);
+  background-color: $color-green;
+  background-image: url(/img/gadgets/gadgets-vector.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  &__conteiner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    @include adaptiv-value(margin-bottom, 45, 40);
+    h2 {
+      mark {
+        color: $color-yellov;
+      }
+      span,
+      ::after,
+      ::before {
+        background-color: #fff;
+      }
+    }
+  }
+
+  &__text,
+  &__title h2{
+    color: #fff;
+    @include adaptiv-value(max-width, 1023, 350);
+    // Mq
+    @include mq(tablet, min){
+     text-align: center;
+  }
+  }
+
+  &__icons {
+    flex-wrap: wrap;
+    @include flex-center;
+    @include adaptiv-value(gap, 100, 30);
+    @include adaptiv-value(margin-top, 70, 40);
+    // mq
+    @include mq(tablet) {
+      width: 60%;
+    }
+    @include mq(phone) {
+      width: 90%;
+    }
+  }
+
+  &__link {
+    
+  }
+
+  &__icon {
+    text-align: center;
+    
+    img {
+      width: 100%;
+    }
+
+    figcaption {
+      color: #fff;
+    }
+  }
+}
+

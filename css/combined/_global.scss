@@ -38,7 +38,36 @@ body{
     color: $color-green;
     background-color: transparent; 
   }
+
+  &__span {
+    display: inline-block;
+    position: relative;
+    width: 10px;
+    margin-left: 15px;
+    border-radius: 50px;
+    height: 3px;
+    background-color: $color-green;
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      border-radius: 50px;
+      height: 3px;
+      background-color: $color-green;
+    }
+    &::after {
+      left: 15px;
+      width: 70px;
+    }
+    &::before {
+      right: 15px;
+      width: 10px;
+    }
+  }
 }
+
+
 
 a {
   display: inline-block;

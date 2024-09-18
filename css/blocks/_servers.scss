@@ -32,33 +32,6 @@
 
   &__title {
     @include adaptiv-value(margin-bottom, 45, 40);
-    span,
-    ::after,
-    ::before {
-      border-radius: 50px;
-      height: 3px;
-      background-color: $color-green;
-    }
-    span{
-      display: inline-block;
-      position: relative;
-      width: 10px;
-      margin-left: 15px;
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 15px;
-        width: 70px;
-      }
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 15px;
-        width: 10px;
-      }
-    }
   }
 
   &__text {
