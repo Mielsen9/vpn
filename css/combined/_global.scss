@@ -5,14 +5,39 @@ body{
   font-weight: 400;
   line-height: 1.65;
   color: #5c5c5c;
-
   @include adaptiv-font(22, 16);
+  @include mq(desktop) {
+    font-size: 16px;
+  }
+}
+
+.none {
+  display: none !important;
+}
+
+.revers {
+  flex-direction: row-reverse;
 }
 
 .wrapper {
   max-width: 1550px;
   margin: 0 auto;
   padding: 0 15px
+}
+
+.title {
+  font-weight: 700;
+  line-height: 1.3;
+  color: #191919;
+  @include adaptiv-font(40, 22);
+  @include mq(desktop) {
+    font-size: 22px;
+  }
+
+  mark {
+    color: $color-green;
+    background-color: transparent; 
+  }
 }
 
 a {

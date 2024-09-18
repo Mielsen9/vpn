@@ -1,0 +1,95 @@
+.servers {
+  @include adaptiv-value(padding-top, 140, 65);
+  @include adaptiv-value(padding-bottom, 160, 50);
+  &__conteiner {
+    display: flex;
+    flex-direction: column;
+    gap: 300px;
+    @include adaptiv-value(gap, 300, 50);
+    
+    :nth-child(even) {
+      @include mq(tablet, min) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__content-conteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    @include mq(tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    @include mq(tablet, min) {
+      @include adaptiv-value(width, 760, 500);
+    }
+  }
+
+  &__title {
+    @include adaptiv-value(margin-bottom, 45, 40);
+    span,
+    ::after,
+    ::before {
+      border-radius: 50px;
+      height: 3px;
+      background-color: $color-green;
+    }
+    span{
+      display: inline-block;
+      position: relative;
+      width: 10px;
+      margin-left: 15px;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 15px;
+        width: 70px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 15px;
+        width: 10px;
+      }
+    }
+  }
+
+  &__text {
+    p {
+      @include adaptiv-value(margin-bottom, 40, 20);
+    }
+  }
+
+  &__security-info {
+    display: flex;
+    gap: 24px;
+    p{
+      color: $color-green;
+      @include adaptiv-font(18, 14)
+    }
+    img {
+      width: 65px;
+      height: auto;
+    }
+  }
+
+  &__img {
+    max-width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.left-border {
+  border-left: 1px solid #000;
+  padding-left: 30px;
+}
+
