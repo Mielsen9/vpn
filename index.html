@@ -9,7 +9,7 @@
 </head>
 <body>
   <!-- Start header-->
-  <header class="header none">
+  <header class="header ">
     <div class="header__conteiner wrapper">
       <!-- pay_logo -->
       <div class="header__logo logo">
@@ -20,27 +20,29 @@
         </a>
       </div>
       <!-- nav -->
-      <nav class="header__nav nav">
-        <div class="nav__body">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a data-goto="" class="nav__link" href="#">О нас</a>
-            </li>
-            <li class="nav__item">
-              <a data-goto="" class="nav__link" href="#">Сервера</a>
-            </li>
-            <li class="nav__item">
-              <a data-goto="" class="nav__link" href="#">Устройства</a>
-            </li>
-            <li class="nav__item">
-              <a data-goto="" class="nav__link" href="#">Безопасность</a>
-            </li>
-            <li class="nav__item">
-              <a data-goto="" class="nav__link" href="#">FAQ</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <div class="header__nav">
+        <nav class="nav">
+          <div class="nav__body">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a data-goto=".intro" class="nav__link" href="#">О нас</a>
+              </li>
+              <li class="nav__item">
+                <a data-goto=".servers" class="nav__link" href="#">Сервера</a>
+              </li>
+              <li class="nav__item">
+                <a data-goto=".gadgets" class="nav__link" href="#">Устройства</a>
+              </li>
+              <li class="nav__item">
+                <a data-goto=".safety" class="nav__link" href="#">Безопасность</a>
+              </li>
+              <li class="nav__item">
+                <a data-goto=".question" class="nav__link" href="#">FAQ</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
       <!-- comunication -->
       <div class="header__comunication comunication">
         <a href="#" class="comunication__link">
@@ -61,7 +63,7 @@
   <!-- Start main -->
   <main class="main">
     <!-- Start intro -->
-    <section class="intro none">
+    <section class="intro">
       <div class="intro__conteiner wrapper">
         <!-- Intro__text -->
         <div class="intro__text">
@@ -106,7 +108,7 @@
       </div>
     </section>
     <!-- Start servers -->
-    <section class="servers none">
+    <section class="servers">
       <div class="servers__conteiner wrapper">
 
         <div class="servers__content-conteiner">
@@ -179,7 +181,7 @@
       </div>
     </section>
     <!-- Start gedgets -->
-    <section class="gadgets none">
+    <section class="gadgets">
       <div class="gadgets__conteiner wrapper">
 
         <div class="gadgets__title">
@@ -225,7 +227,7 @@
       </div>
     </section>
     <!-- Start safety -->
-    <section class="safety none">
+    <section class="safety">
       <div class="safety__conteiner wrapper">
          <!-- title -->
         <div class="safety__title">
@@ -313,7 +315,7 @@
       </div>
     </section>
     <!-- Start question -->
-    <section class="question none">
+    <section class="question">
       <div class="question__conteiner wrapper">
 
         <div class="question__title ">
@@ -371,7 +373,7 @@
     </section>
 
     <!-- Start benefits -->
-    <section class="benefits none">
+    <section class="benefits">
       <div class="benefits__conteiner wrapper">
 
         <div class="benefits__text">
@@ -434,22 +436,22 @@
         </div>
         <!-- nav -->
         <nav class="footer__nav nav">
-          <div class="nav__body">
+          <div class="nav__body-footer">
             <ul class="nav__list">
               <li class="nav__item">
-                <a data-goto="" class="nav__link" href="#">О нас</a>
+                <a data-goto=".intro" class="nav__link" href="#">О нас</a>
               </li>
               <li class="nav__item">
-                <a data-goto="" class="nav__link" href="#">Сервера</a>
+                <a data-goto=".servers" class="nav__link" href="#">Сервера</a>
               </li>
               <li class="nav__item">
-                <a data-goto="" class="nav__link" href="#">Устройства</a>
+                <a data-goto=".gadgets" class="nav__link" href="#">Устройства</a>
               </li>
               <li class="nav__item">
-                <a data-goto="" class="nav__link" href="#">Безопасность</a>
+                <a data-goto=".safety" class="nav__link" href="#">Безопасность</a>
               </li>
               <li class="nav__item">
-                <a data-goto="" class="nav__link" href="#">FAQ</a>
+                <a data-goto=".question" class="nav__link" href="#">FAQ</a>
               </li>
             </ul>
           </div>

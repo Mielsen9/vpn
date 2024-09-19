@@ -416,6 +416,11 @@ button {
   height: 50px;
   cursor: pointer;
 }
+@media only screen and (max-width: 767px) {
+  .burger-menu {
+    display: flex;
+  }
+}
 .burger-menu__icon {
   display: flex;
   justify-content: flex-end;
@@ -440,11 +445,6 @@ button {
   width: 24px;
 }
 
-@media only screen and (max-width: 767px) {
-  .burger-menu {
-    display: flex;
-  }
-}
 .open .burger-menu__icon::after {
   transform: rotate(45deg);
   bottom: 10px;
@@ -454,43 +454,48 @@ button {
   transform: rotate(-45deg);
   top: 35px;
 }
-.open .nav {
+.open .header__nav {
   display: flex;
 }
-.open .nav__body {
+.open .header__nav .nav__body {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: auto;
+  height: 100vh;
   background-color: #191919;
-  padding: 110px 0;
-  overflow: auto;
+  padding-top: 110px;
+  padding-bottom: 45px;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
 }
-.open .nav__list {
+.open .header__nav .nav__list {
   flex-direction: column;
   align-items: flex-start;
   gap: 40px;
+  margin-bottom: 40px;
   padding-left: 60px;
 }
 @media (max-width: 1550px) {
-  .open .nav__list {
+  .open .header__nav .nav__list {
     padding-left: calc(30px + 30 * (100vw - 390px) / 1160);
   }
 }
-.open .nav__link {
+.open .header__nav .nav__link {
   font-size: 18px;
 }
-.open .comunication {
+.open .header__nav .header__comunication {
   display: flex;
   margin: 0 5%;
-  z-index: 3;
-  position: absolute;
-  bottom: 20px;
-  width: 90%;
 }
-.open .comunication__link {
+.open .header__nav .header__comunication .comunication__link {
   width: 100%;
+}
+
+body.lock {
+  overflow: hidden;
 }
 
 .download {
@@ -610,7 +615,6 @@ button {
 }
 
 .header {
-  background-color: green;
   position: absolute;
   width: 100%;
   height: 100px;
@@ -1077,7 +1081,7 @@ button {
 
 .safety {
   padding-top: 130px;
-  margin-bottom: 120px;
+  padding-bottom: 120px;
 }
 @media (max-width: 1550px) {
   .safety {
@@ -1086,7 +1090,7 @@ button {
 }
 @media (max-width: 1550px) {
   .safety {
-    margin-bottom: calc(65px + 55 * (100vw - 390px) / 1160);
+    padding-bottom: calc(65px + 55 * (100vw - 390px) / 1160);
   }
 }
 .safety__title {
@@ -1494,6 +1498,7 @@ button {
   }
   .footer__nav .nav__list, .footer__logo .nav__list {
     flex-direction: column;
+    align-items: start;
     gap: 40px;
   }
 }

@@ -1,6 +1,6 @@
 .safety {
   @include adaptiv-value(padding-top, 130, 65);
-  @include adaptiv-value(margin-bottom, 120, 65);
+  @include adaptiv-value(padding-bottom, 120, 65);
 
   &__title {
     display: flex;
