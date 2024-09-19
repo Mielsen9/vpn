@@ -8,6 +8,10 @@
     gap: 30px;
     flex-wrap: wrap;
     padding-right: 10px;
+      //Media query
+    @include mq(mTablet) {
+        gap: 10px;
+    }
   }
   &__items {
     display: flex;
@@ -35,15 +39,4 @@
     display: flex;
     justify-content:space-between;
   }
-
-  //Media query
-  @include mq(mtablet) {
-    &__list {
-      gap: 10px;
-    }
-  }
-  @include mq(tablet) {
-    display: none;
-  }
-
 }
