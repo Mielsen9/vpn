@@ -1,0 +1,21 @@
+.check-icon {
+  position: relative;
+  display: inline-block;
+  width: 40px; /* Розмір кола */
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%; /* Кругла форма */
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 10px;
+    border: solid $color-green; /* Колір галочки */
+    border-width: 0 0 6px 6px;
+    border-radius: 3px;
+    transform: translate(-50%, -50%) rotate(-45deg); /* Поворот для галочки */
+  }
+}

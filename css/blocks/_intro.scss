@@ -10,21 +10,24 @@
 
   &__conteiner {
     background-color: $color-yellov;
-    border-radius: clamp(20px, 5.16vw, 80px);;
+    border-radius: clamp(20px, 5.16vw, 80px);
     background-image: url(/img/intro/plenet.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
+    justify-content: space-between;
     align-items: end;
     padding-right: 15px;
-    @include adaptiv-value(padding-right, 100, 0);
     //Mq
     @include mq(tablet) {
       flex-wrap: wrap;
+      justify-content: center;
       @include adaptiv-value(padding-top, 100, 25);
       @include adaptiv-value(padding-left, 100, 15);
       @include adaptiv-value(padding-bottom, 20, 6);
+    }
+    @include mq(mDesktop) {
       @include adaptiv-value(padding-right, 100, 15);
     }
   }
@@ -72,6 +75,9 @@
     @include mq(tablet) {
       font-weight: 700;
     }
+    @include mq(desktop) {
+      font-size: 12px;
+    }
   }
 
   &__title-text {
@@ -88,6 +94,13 @@
     @include mq(phone) {
       text-align: center;
     }
+    @include mq(desktop) {
+      font-size: 40px;
+    }
+    @include mq(mDesktop) {
+      @include adaptiv-font(55, 25);
+    }
+
   }
 
   &__download {
@@ -98,10 +111,9 @@
   }
 
   &__img {
-    width: 100%;
-    text-align: end;
     // Media Qeury 
-    @include mq(desktop) {
+    text-align: end;
+    @include mq(mDesktop) {
       display: none;
     }
     @include mq(tablet) {
@@ -109,9 +121,8 @@
     }
     img{
       margin-top: 20px;
-      width: 100%;
-      height: auto;
-      transform: translateY(1.7%);
+      transform: translateY(2%);
+      @include adaptiv-value(width, 630, 300)
     }
   }
 }

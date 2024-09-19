@@ -4,12 +4,6 @@
   background-repeat: no-repeat;
   @include adaptiv-value(padding-top, 130, 65);
   @include adaptiv-value(padding-bottom, 130, 65);
-  &__conteiner {
-
-  }
-
-  &__title {
-  }
 
   &__blocks {
     display: flex;
