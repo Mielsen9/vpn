@@ -641,7 +641,7 @@ button {
 
 .intro {
   background-color: #89AF5C;
-  background-image: url(/img/intro/Vector3.svg);
+  background-image: url(./img/intro/vector3.svg);
   background-repeat: no-repeat;
   background-size: cover;
   padding-right: 15px;
@@ -662,7 +662,7 @@ button {
 .intro__conteiner {
   background-color: #FFDC42;
   border-radius: clamp(20px, 5.16vw, 80px);
-  background-image: url(/img/intro/plenet.svg);
+  background-image: url(./img/intro/plenet.svg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -990,7 +990,7 @@ button {
   padding-top: 100px;
   padding-bottom: 100px;
   background-color: #89AF5C;
-  background-image: url(/img/gadgets/gadgets-vector.svg);
+  background-image: url(./img/gadgets/gadgets-vector.svg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1215,7 +1215,7 @@ button {
 
 .question {
   background-color: #89AF5C;
-  background-image: url(/img/question/Ellipse\ .svg);
+  background-image: url(./img/question/ellipse.svg);
   background-repeat: no-repeat;
   padding-top: 130px;
   padding-bottom: 130px;
