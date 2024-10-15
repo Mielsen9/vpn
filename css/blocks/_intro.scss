@@ -1,6 +1,6 @@
 .intro {
   background-color: $color-green;
-  background-image: url(./img/intro/vector3.svg);
+  background-image: url(/img/intro/vector3.svg);
   background-repeat: no-repeat;
   background-size: cover;
   padding-right: 15px;
@@ -11,7 +11,7 @@
   &__conteiner {
     background-color: $color-yellov;
     border-radius: clamp(20px, 5.16vw, 80px);
-    background-image: url(./img/intro/plenet.svg);
+    background-image: url(/img/intro/plenet.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

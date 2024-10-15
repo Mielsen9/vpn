@@ -1,6 +1,6 @@
 .question {
   background-color: $color-green;
-  background-image: url(./img/question/ellipse.svg); 
+  background-image: url(/img/question/ellipse.svg); 
   background-repeat: no-repeat;
   @include adaptiv-value(padding-top, 130, 65);
   @include adaptiv-value(padding-bottom, 130, 65);
