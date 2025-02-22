@@ -10,7 +10,9 @@ body{
     font-size: 16px;
   }
 }
-
+body._lock {
+  overflow: hidden;  /* Це заборонить прокрутку сторінки */
+}
 // .none {
 //   display: none !important;
 // }
